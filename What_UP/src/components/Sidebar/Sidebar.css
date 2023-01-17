@@ -50,4 +50,7 @@
 .sidebar_search {
 }
 .sidebar_chats {
+  background-color: white;
+  flex: 1;
+  overflow: scroll;
 }

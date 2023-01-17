@@ -45,18 +45,6 @@ const Sidebar = () => {
           <SidebarChat />
           <SidebarChat />
           <SidebarChat />
-          <SidebarChat />
-          <SidebarChat />
-          {/* <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1>
-          <h1>SideBar Data</h1> */}
         </div>
       </div>
     </>
