@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
-import { Avatar } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 const SidebarChat = ({ addNewChat }) => {
   const [random, setRandom] = useState("");
@@ -8,7 +9,16 @@ const SidebarChat = ({ addNewChat }) => {
   useEffect(() => {
     setRandom(Math.floor(Math.random() * 5000));
   }, []);
-  return (
+
+  const createChat = () => {
+    const roomName = prompt("Please enter name for Chat");
+    console.log(roomName);
+    if (roomName) {
+      //do some dbms stuff
+    }
+  };
+
+  return !addNewChat ? (
     <>
       {/* <h1>SideBarData</h1> */}
       <div className="sidebarChat">
@@ -19,6 +29,16 @@ const SidebarChat = ({ addNewChat }) => {
         </div>
       </div>
     </>
+  ) : (
+    <div onClick={createChat} className="sidebarChat">
+      <h2>
+        Add New Chat{" "}
+        <IconButton>
+          {" "}
+          <AddCircleIcon />{" "}
+        </IconButton>
+      </h2>
+    </div>
   );
 };
 
