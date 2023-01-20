@@ -17,6 +17,8 @@ const Chat = () => {
   const sendMessage = (e) => {
     e.preventDefault();
     console.log("you typed >>>", input);
+
+    setInput("");
   };
   return (
     <>
@@ -58,7 +60,7 @@ const Chat = () => {
           <form>
             <input
               value={input}
-              onChange={(e) => setInput(e.target, e.target.value)}
+              onChange={(e) => setInput(e.target.value)}
               type="text"
               placeholder="Type a Message..."
             />
