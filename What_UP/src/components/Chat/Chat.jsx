@@ -1,7 +1,7 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchOutlined from "@material-ui/icons/SearchOutlined";
-import AttachedFile from "@material-ui/icons/SearchOutlined";
+import AttachFile from "@material-ui/icons/AttachFile";
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
 
@@ -30,7 +30,7 @@ const Chat = () => {
               <SearchOutlined />
             </IconButton>
             <IconButton>
-              <AttachedFile />
+              <AttachFile />
             </IconButton>
             <IconButton>
               <MoreVertIcon />
