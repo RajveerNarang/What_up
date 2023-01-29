@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import db from "../../firebase";
 
-const SidebarChat = ({ addNewChat }) => {
+const SidebarChat = ({ id, name, addNewChat }) => {
   const [random, setRandom] = useState("");
 
   useEffect(() => {
@@ -15,6 +16,7 @@ const SidebarChat = ({ addNewChat }) => {
     console.log(roomName);
     if (roomName) {
       //do some dbms stuff
+      db.collection();
     }
   };
 
@@ -24,7 +26,7 @@ const SidebarChat = ({ addNewChat }) => {
       <div className="sidebarChat">
         <Avatar src={`https://avatars.dicebear.com/api/human/${random}.svg `} />
         <div className="sidebarChat_info">
-          <h2>Room Name</h2>
+          <h2>{name}</h2>
           <p>Last Message ....</p>
         </div>
       </div>
