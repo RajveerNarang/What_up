@@ -5,11 +5,13 @@ import AttachFile from "@material-ui/icons/AttachFile";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./Chat.css";
 
 const Chat = () => {
   const [input, setInput] = useState("");
   const [random, setRandom] = useState("");
+  const { roomId } = useParams();
   useEffect(() => {
     setRandom(Math.floor(Math.random() * 5000));
   }, []);

@@ -9,9 +9,16 @@ function App() {
       {/* <h1>Test Project</h1> */}
       <div className="app_body">
         <Router>
+          {/* Always Render Sidebar */}
+          <Sidebar />
           <Routes>
             {/* <Route path="/whatup" element={<Sidebar /> && <chat />} /> */}
-            <Route path="/whatup" element={[<Sidebar />, <Chat />]} />
+            {/* Render both together */}
+            {/* <Route path="/whatup" element={[<Sidebar />, <Chat />]} /> */}
+
+            {/* Render only one component */}
+
+            <Route path="/rooms/:roomId" element={<Chat />} />
 
             {/* <Sidebar />
 
