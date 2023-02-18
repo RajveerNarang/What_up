@@ -12,6 +12,10 @@ const Chat = () => {
   const [input, setInput] = useState("");
   const [random, setRandom] = useState("");
   const { roomId } = useParams();
+  const [roommName, setRoomName] = usestate("");
+
+  useEffect(() => {}, [roomId]);
+
   useEffect(() => {
     setRandom(Math.floor(Math.random() * 5000));
   }, []);
