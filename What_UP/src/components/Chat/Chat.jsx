@@ -7,14 +7,21 @@ import MicIcon from "@material-ui/icons/Mic";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Chat.css";
+import db from "../../firebase";
 
 const Chat = () => {
   const [input, setInput] = useState("");
   const [random, setRandom] = useState("");
   const { roomId } = useParams();
-  const [roommName, setRoomName] = usestate("");
+  const [roomName, setRoomName] = useState("");
 
-  useEffect(() => {}, [roomId]);
+  useEffect(() => {
+    if (roomId) {
+      db.collection("rooms")
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+    }
+  }, [roomId]);
 
   useEffect(() => {
     setRandom(Math.floor(Math.random() * 5000));
@@ -36,7 +43,7 @@ const Chat = () => {
             />
           </IconButton>
           <div className="chat_headerInfo">
-            <h3>Room Name</h3>
+            <h3>{roomName}</h3>
             <p>Last Seen...</p>
           </div>
 
