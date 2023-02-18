@@ -16,7 +16,9 @@ const SidebarChat = ({ id, name, addNewChat }) => {
     console.log(roomName);
     if (roomName) {
       //do some dbms stuff
-      db.collection();
+      db.collection("rooms").add({
+        name: roomName,
+      });
     }
   };
 
