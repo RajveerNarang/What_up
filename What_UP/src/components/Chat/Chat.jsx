@@ -39,7 +39,9 @@ const Chat = () => {
         <div className="chat_header">
           <IconButton>
             <Avatar
-              src={`https://avatars.dicebear.com/api/human/${random}.svg `}
+              src={`https://avatars.dicebear.com/api/human/${Math.floor(
+                Math.random() * 5000
+              )}.svg `}
             />
           </IconButton>
           <div className="chat_headerInfo">
