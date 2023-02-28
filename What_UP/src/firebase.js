@@ -1,12 +1,12 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzMnTQSi92gzTruWjxaFdZZkVxH2d0t_M",
-  authDomain: "w-up-009.firebaseapp.com",
-  projectId: "w-up-009",
-  storageBucket: "w-up-009.appspot.com",
-  messagingSenderId: "1093485797631",
-  appId: "1:1093485797631:web:ed1985f8b70aac71c82cca",
+  apiKey: "AIzaSyBB_UlsPi9ycmywyrj2lRu8PayLVn8DZGc",
+  authDomain: "whatup-00.firebaseapp.com",
+  projectId: "whatup-00",
+  storageBucket: "whatup-00.appspot.com",
+  messagingSenderId: "567944817359",
+  appId: "1:567944817359:web:cd7faea79e3c890ffae5ba",
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
