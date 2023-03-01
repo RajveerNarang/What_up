@@ -35,7 +35,10 @@ function App() {
 
               {/* chat */}
 
-              <Route path="/" element={<h1>Home Screen</h1>} />
+              <Route
+                path="/"
+                element={<h1>Select Chat To Display Messages.</h1>}
+              />
             </Routes>
           </Router>
         </div>

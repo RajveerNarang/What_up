@@ -14,6 +14,7 @@ const Chat = () => {
   const [random, setRandom] = useState("");
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState("");
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     if (roomId) {
@@ -21,6 +22,13 @@ const Chat = () => {
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
     }
+    db.collection("rooms")
+      .doc(roomId)
+      .collection("messages")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) =>
+        setMessages(snapshot.docs.map((doc) => doc.data()))
+      );
   }, [roomId]);
 
   useEffect(() => {
@@ -29,7 +37,7 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("you typed >>>", input);
+    console.log("Sent Text >>>", input);
 
     setInput("");
   };
@@ -62,11 +70,15 @@ const Chat = () => {
           </div>
         </div>
         <div className="chat_body">
-          <p className={`chat_message ${true && "chat_receiver"} `}>
-            <span className="chat_name">Rajveer</span>
-            Hey Guys
-            <span className="chat_timeStamp">3:30pm</span>
-          </p>
+          {messages.map((messages) => (
+            <p className={`chat_message ${true && "chat_receiver"} `}>
+              <span className="chat_name">{messages.name}</span>
+              {/* Hey Guys */} {messages.msgs}
+              <span className="chat_timeStamp">
+                {new Date(messages.timestamp?.toDate()).toGMTString()}
+              </span>
+            </p>
+          ))}
         </div>
         <div className="chat_footer">
           <IconButton>
