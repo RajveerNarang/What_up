@@ -3,6 +3,8 @@
   padding: 20px;
   cursor: pointer;
   border: 1px solid #f6f6f6;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .sidebarChat:hover {
@@ -16,6 +18,10 @@
   margin-bottom: 8px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 /* .plus-color {
   color: lightgreen;
 } */

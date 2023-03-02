@@ -7,7 +7,7 @@ import db from "../../firebase";
 
 const SidebarChat = ({ id, name, addNewChat }) => {
   const [random, setRandom] = useState("");
-  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState("");
 
   useEffect(() => {
     setRandom(Math.floor(Math.random() * 5000));
@@ -20,10 +20,10 @@ const SidebarChat = ({ id, name, addNewChat }) => {
         .collection("messages")
         .orderBy("timestamp", "desc")
         .onSnapshot((snapshot) =>
-          setMessage(snapshot.docs.map((doc) => doc.data()))
+          setMessages(snapshot.docs.map((doc) => doc.data()))
         );
     }
-  });
+  }, [id]);
 
   const createChat = () => {
     const roomName = prompt("Please enter name for Chat");
@@ -48,7 +48,7 @@ const SidebarChat = ({ id, name, addNewChat }) => {
             <h2>{name}</h2>
             <p>
               {/* Last Message .... */}
-              {message[0]?.message}
+              {messages[0]?.message}
             </p>
           </div>
         </div>
